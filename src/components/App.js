@@ -4,7 +4,7 @@ import NoteContainer from "./NoteContainer";
 
 function App() {
   return (
-    <div className="app">
+    <div className="app" id="app">
       <Header />
       {/* <NoteContainer /> */}
     </div>
