@@ -7,5 +7,5 @@ import App from "./components/App";
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-root.render(<App tab="home" />);
+root.render(<BrowserRouter><App tab="home" /></BrowserRouter>);
 // ReactDOM.render(<BrowserRouter><App /></BrowserRouter>, document.getElementById("root"));

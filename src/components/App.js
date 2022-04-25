@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="app" id="app">
       <Header />
-      {/* <NoteContainer /> */}
+      <NoteContainer />
     </div>
   );
 }
