@@ -170,7 +170,7 @@ function handleClearSearch () {
           <NoteGrid notes={filteredNotes} onNoteClick={toggleDisplayedNote} id={displayedNote.id} handleNewButtonClick={handleNewButtonClick} />
         </Route>
         <Route path="/edit/:id">
-          <NoteEditor note={editNote} handleEditSubmit={handleEditSubmit} />
+          <NoteEditor note={editNote} handleEditSubmit={handleEditSubmit} toggleEditNote={toggleEditNote} />
         </Route>
         <Route exact path="/notes/:id">
           <NoteViewer displayedNote={displayedNote} onEditButtonClick={toggleEditNote} onDeleteButtonClick={onDeleteButtonClick} onTagClick={onTagClick} />

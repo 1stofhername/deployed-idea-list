@@ -70,11 +70,7 @@ p.instructions {
   justify-content: left;
   align-items: center;
   margin-bottom: 10px;
-}
-
-.nav-bar:hover {
-
-}
+} 
 
 .title {
   font-family: 'IBM Plex Mono';

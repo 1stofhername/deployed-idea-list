@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 
-function NoteEditor({ note, handleEditSubmit }) {
+function NoteEditor({ note, handleEditSubmit, toggleEditNote }) {
   const [editedNoteContent, setEditedNoteContent]=useState(note);
   const { id } = useParams();
 
@@ -33,7 +33,7 @@ function NoteEditor({ note, handleEditSubmit }) {
       <input type="text" name="tags" id="tags" value={editedNoteContent.tags} placeholder="Enter tags separated by ," onChange={(e)=>handleTagChange(e)} />
       <div className="button-row">
         <input className="button" type="submit" value="Save" onSubmit={()=>onEditSubmit}/>
-        <Link to={"/"}>Cancel</Link>
+        <button onClick={toggleEditNote()}>Cancel</button>
       </div>
     </form>
   );
