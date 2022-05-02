@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# IdeaList
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+IdeaList is the ideal place to store all your thoughts and ideas. Never lose track of a great idea again.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+No matter what your hobby or job is, this has likely happened to you. You are at the grocery store, in the shower, waking up from a nap, coming back from a break, and you have an amazing idea! It  seems so incredible that it is impossible you will ever forget it. Later on you want to tell a friend about your stroke of genius, and you can't quite recall what made it so amazing. That twinge of regret is why I built IdeaList. IdeaList allows ordinary people to keep track of their extraordinary ideas. With your ideas all in one place, easily editable, and filterable by custom tags never lose track of an great idea again.
 
-### `npm start`
+This project was bootstrapped with [Create React App]. React-router-dom ensures snappy client side routing and minimizes server calls. This project also uses CSS styling to create a modern and responsive interface. Changes are persisted using a REST API hosted on Heroku.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+You can view and interact with a live demo of this project at (https://idealist-app.herokuapp.com/).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
+To create a note, navigate to the window where the notes are listed and click the AddNote button in the upper left corner of the window.
 
-### `npm run build`
+## Authors
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="https://www.linkedin.com/in/idealcandidate/">Alicia Parris</a>
