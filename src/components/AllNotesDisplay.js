@@ -6,6 +6,7 @@ function AllNotesDisplay ({ notes, onNoteClick }) {
           {notes.map((note)=><NoteItem key={note.id} note={note} onNoteClick={onNoteClick} />)}
         </div>
       );
+   
 }
 
 export default AllNotesDisplay

@@ -151,6 +151,7 @@ function handleClearSearch () {
 }
 
   return (
+
     <>
       <div className="container">
       <Switch>
@@ -166,7 +167,8 @@ function handleClearSearch () {
         onTagClick={onTagClick}
         handleTagReset={handleTagReset} 
         />
-          <NoteGrid notes={filteredNotes} onNoteClick={toggleDisplayedNote} id={displayedNote.id} handleNewButtonClick={handleNewButtonClick} />
+          {notes ?
+            <NoteGrid notes={filteredNotes} onNoteClick={toggleDisplayedNote} id={displayedNote.id} handleNewButtonClick={handleNewButtonClick} />: <h1>Loading...</h1>}
         </Route>
         <Route path="/edit/:id">
           <NoteEditor note={editNote} handleEditSubmit={handleEditSubmit} toggleEditNote={toggleEditNote} />

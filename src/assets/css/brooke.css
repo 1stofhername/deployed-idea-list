@@ -29,7 +29,7 @@ p.instructions {
 .note-editor input[name="title"] {
   font-size: 24px;
   font-weight: 700;
-  border: 1px dashed grey;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   margin: 0.5em 0;
   box-sizing: border-box;
   padding:20px;
@@ -37,8 +37,9 @@ p.instructions {
 
 .note-editor textarea {
   font-size: 1em;
-  border: 1px dashed grey;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   box-sizing: border-box;
+  border:none;
   resize: none;
   padding:20px;
 }
@@ -47,7 +48,7 @@ p.instructions {
   font-family: 'IBM Plex Mono';
   font-size: 1em;
   font-weight: 700;
-  border: 1px dashed grey;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
   margin: 0.5em 0;
   box-sizing: border-box;
   padding:20px;
@@ -88,7 +89,6 @@ p.instructions {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  /* border: 2px dashed grey; */
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -111,9 +111,9 @@ div.view-all button {
   margin-bottom: 10px;
 }
 
-div.view-all div:first-child {
+/* div.view-all div:first-child {
   border-top: 1px solid grey;
-}
+} */
 
 #tag-delete {
   color: rgba(56, 51, 51, 0.658);
@@ -147,7 +147,7 @@ div.all-notes-display div.note-card {
   width:25%;
   max-height:200px;
   padding-left: 30px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
   margin-bottom: 20px;
   flex-direction: row;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -250,11 +250,14 @@ div.tag-filter {
 
 button.add-new {
   width:fit-content;
+  margin-top:20px;
+  margin-left:40px;
   
 }
 
 div#add-new {
   position:relative;
+  
 }
 
 button.add-new:hover {

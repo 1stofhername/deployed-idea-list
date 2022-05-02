@@ -36,7 +36,7 @@ function NoteViewer({ onEditButtonClick, onDeleteButtonClick }) {
       <Link id="x" to={"/"}>View All Notes</Link>
      </div>
   );} else {
-    return <h1>Loading</h1>
+    return <h1>Loading...</h1>
   }
 }
 

@@ -11,7 +11,7 @@ function NoteItem({ note, onNoteClick }) {
       <h2>{title}</h2>
       <p>{caption}</p>
       {/* <span className="button"><button id="view" onClick={()=>onNoteClick(note)}>View</button></span> */}
-      <Link to={`/notes/${id}`} onClick={()=>console.log(note)}>Expand</Link>
+      <Link to={`/notes/${id}`} id="expand" onClick={()=>console.log(note)}>Expand</Link>
     </div>
   );
 }
