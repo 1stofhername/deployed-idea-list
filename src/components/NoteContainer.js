@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Search from "./Search";
 import TagFilter from "./TagFilter";
 import NoteEditor from "./NoteEditor";
@@ -49,13 +49,17 @@ function NoteContainer () {
     }
   }
 
-  //CRUD Functions 
+  // CRUD Functions  //
+
+  // GET //
 
   useEffect(()=>{
     fetch('https://json-server-heroku-hosting-2.herokuapp.com/notes')
   .then((res)=>res.json())
   .then((data)=>setNotes(data))
 }, []);
+
+// CREATE //
 
 function handleNewButtonClick () {
   fetch('https://json-server-heroku-hosting-2.herokuapp.com/notes', {
@@ -72,8 +76,14 @@ function handleNewButtonClick () {
     })
   })
   .then(res=>res.json())
-  .then(data=>{let newNotes= [...notes, data]; setNotes(newNotes);setDisplayedNote(data)})
+  .then(data=>{
+    // let newNotes= [...notes, data]; setNotes(newNotes);setDisplayedNote(data)
+    // <Redirect to={`/notes/${data.id}`} />
+    console.log(data.id)
+  })
 }
+
+// UPDATE //
 
 function handleEditSubmit (editedNoteObj){
   fetch(`https://json-server-heroku-hosting-2.herokuapp.com/notes/${editedNoteObj.id}`, {
@@ -97,6 +107,8 @@ function handleEditSubmit (editedNoteObj){
       history.push(`/notes/${data.id}`)
     })
 };
+
+// DELETE //
 
 function onDeleteButtonClick (item) {
   fetch(`https://json-server-heroku-hosting-2.herokuapp.com/notes/${item.id}`, {

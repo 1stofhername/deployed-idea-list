@@ -55,6 +55,7 @@ p.instructions {
 
 .nav-bar {
   width: 100%;
+  min-height: 200px;
   background-image: url('../img/pexels-sergei-a-2539452.png');
   background-attachment: fixed;
   background-position:contain;
@@ -69,6 +70,10 @@ p.instructions {
   justify-content: left;
   align-items: center;
   margin-bottom: 10px;
+}
+
+.nav-bar:hover {
+
 }
 
 .title {
@@ -87,7 +92,8 @@ p.instructions {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 2px dashed grey;
+  /* border: 2px dashed grey; */
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 input {
@@ -136,7 +142,6 @@ div.view-all div:first-child {
   justify-content: space-between;
   display: flex;
   flex-wrap: wrap;
-  border: 2px dashed grey;
   overflow-y:scroll;
   height: 500px;
   padding: 10px;
@@ -145,17 +150,17 @@ div.view-all div:first-child {
 div.all-notes-display div.note-card {
   width:25%;
   max-height:200px;
-  border: 2px dashed grey;
   padding-left: 30px;
   padding-bottom: 10px;
   margin-bottom: 20px;
   flex-direction: row;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 div.all-notes-display div.note-card:hover {
   background-color: #f5f5f5;
-  border: 2px dashed grey;
   padding-left: 30px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .detail {
@@ -215,7 +220,7 @@ button, input[type="submit"] {
   letter-spacing: 0.5px;
 }
 
-button:hover, .nav-bar:hover, input[type="submit"]:hover {
+button:hover, input[type="submit"]:hover {
   background-image: linear-gradient(to right top, #8A2387, #E94057, #F27121);
   background-repeat: no-repeat;
 }
@@ -244,6 +249,7 @@ div.note-detail-container {
 
 div.tag-filter {
   padding-bottom:10px;
+  overflow-x: scroll;
 }
 
 button.add-new {
