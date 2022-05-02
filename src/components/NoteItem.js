@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function NoteItem({ note, onNoteClick }) {
+function NoteItem({ note, onDeleteButtonClick }) {
   const { body, title, id } = note
   const caption = (body.length > 20) ? note.body.substr(0,20)+"...": note.body
   
@@ -12,6 +12,7 @@ function NoteItem({ note, onNoteClick }) {
       <p>{caption}</p>
       {/* <span className="button"><button id="view" onClick={()=>onNoteClick(note)}>View</button></span> */}
       <Link to={`/notes/${id}`} id="expand" onClick={()=>console.log(note)}>Expand</Link>
+      <button onClick={()=>onDeleteButtonClick(note)}>Delete</button>
     </div>
   );
 }

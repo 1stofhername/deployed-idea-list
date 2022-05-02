@@ -168,7 +168,7 @@ function handleClearSearch () {
         handleTagReset={handleTagReset} 
         />
           {notes ?
-            <NoteGrid notes={filteredNotes} onNoteClick={toggleDisplayedNote} id={displayedNote.id} handleNewButtonClick={handleNewButtonClick} />: <h1>Loading...</h1>}
+            <NoteGrid notes={filteredNotes} onDeleteButtonClick={onDeleteButtonClick} id={displayedNote.id} handleNewButtonClick={handleNewButtonClick} />: <h1>Loading...</h1>}
         </Route>
         <Route path="/edit/:id">
           <NoteEditor note={editNote} handleEditSubmit={handleEditSubmit} toggleEditNote={toggleEditNote} />
