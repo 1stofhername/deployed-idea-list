@@ -14,7 +14,17 @@ This project was bootstrapped with [Create React App]. React-router-dom ensures 
 You can view and interact with a live demo of this project at (https://idealist-app.herokuapp.com/).
 
 ## Usage
-To create a note, navigate to the window where the notes are listed and click the AddNote button in the upper left corner of the window.
+To create a note, navigate to the window where the notes are listed and click the + New Note button in the upper left corner of the window.
+
+To edit the new note, click the Edit button and add a title, content, or tags (separated by commas) and press the 'Save' button to save changes or 'Cancel' to discard.
+
+To view all notes click the 'View All Notes' button.
+
+Delete notes by clicking the 'Delete' button either on the edit view or by clicking the 'Delete' button on the desired note in grid view.
+
+<img src="./src/assets/gifs/idealist.gif">
+
+
 
 ## Authors
 
