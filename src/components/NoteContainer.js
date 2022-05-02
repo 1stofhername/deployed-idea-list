@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Search from "./Search";
 import TagFilter from "./TagFilter";
 import NoteEditor from "./NoteEditor";
@@ -77,8 +77,8 @@ function handleNewButtonClick () {
   })
   .then(res=>res.json())
   .then(data=>{
-    let newNotes= [...notes, data]; setNotes(newNotes);setDisplayedNote(data)
-    history.push(`/notes/${data.id}`)
+    let newNotes= [...notes, data]; setNotes(newNotes);setDisplayedNote(data);
+    history.push(`/notes/${data.id}`);
   })
 }
 
@@ -168,7 +168,7 @@ function handleClearSearch () {
         handleTagReset={handleTagReset} 
         />
           {notes ?
-            <NoteGrid notes={filteredNotes} onDeleteButtonClick={onDeleteButtonClick} id={displayedNote.id} handleNewButtonClick={handleNewButtonClick} />: <h1>Loading...</h1>}
+            <NoteGrid notes={filteredNotes} onDeleteButtonClick={onDeleteButtonClick} tagFilter={tagFilter} id={displayedNote.id} handleNewButtonClick={handleNewButtonClick} />: <h1>Loading...</h1>}
         </Route>
         <Route path="/edit/:id">
           <NoteEditor note={editNote} handleEditSubmit={handleEditSubmit} toggleEditNote={toggleEditNote} />
