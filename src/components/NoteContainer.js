@@ -77,9 +77,8 @@ function handleNewButtonClick () {
   })
   .then(res=>res.json())
   .then(data=>{
-    // let newNotes= [...notes, data]; setNotes(newNotes);setDisplayedNote(data)
-    // <Redirect to={`/notes/${data.id}`} />
-    console.log(data.id)
+    let newNotes= [...notes, data]; setNotes(newNotes);setDisplayedNote(data)
+    history.push(`/notes/${data.id}`)
   })
 }
 
