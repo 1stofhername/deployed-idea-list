@@ -135,7 +135,7 @@ div.view-all button {
 }
 
 .all-notes-display{
-  justify-content: space-between;
+  justify-content: flex-start;
   display: flex;
   flex-wrap: wrap;
   overflow-y:scroll;
@@ -148,7 +148,7 @@ div.all-notes-display div.note-card {
   max-height:200px;
   padding-left: 30px;
   padding-bottom: 20px;
-  margin-bottom: 20px;
+  margin: 40px;
   flex-direction: row;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
