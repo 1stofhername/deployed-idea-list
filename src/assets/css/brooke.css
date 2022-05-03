@@ -146,6 +146,7 @@ div.view-all button {
 div.all-notes-display div.note-card {
   width:25%;
   max-height:200px;
+  min-width:300px;
   padding-left: 30px;
   padding-bottom: 20px;
   margin: 40px;
