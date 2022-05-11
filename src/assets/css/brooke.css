@@ -152,6 +152,8 @@ div.all-notes-display div.note-card {
   margin: 40px;
   flex-direction: row;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border:1px solid transparent;
+  
 }
 
 div.all-notes-display div.note-card:hover {

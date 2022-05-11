@@ -1,6 +1,6 @@
 import React from "react";
 
-function TagFilter ({ notes, tagFilter, onTagClick, handleTagReset }) {
+function TagFilter ({ notes, tagFilter, onTagClick }) {
     const allTags=[];
     notes.map(note=>allTags.push('All', ...note.tags))
     const uniqueTags = ([...new Set(allTags)]);
