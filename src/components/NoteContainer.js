@@ -77,7 +77,7 @@ function handleNewButtonClick () {
   })
   .then(res=>res.json())
   .then(data=>{
-    let newNotes= [...notes, data]; setNotes(newNotes);setDisplayedNote(data);
+    let newNotes= [data, ...notes]; setNotes(newNotes);setDisplayedNote(data);
     history.push(`/notes/${data.id}`);
   })
 }
