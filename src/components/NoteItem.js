@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import expand from '../assets/img/expand.svg';
+
 
 function NoteItem({ note, onDeleteButtonClick }) {
   const { body, title, id } = note
@@ -7,13 +9,18 @@ function NoteItem({ note, onDeleteButtonClick }) {
   
 
   return (
-    <div className="note-card">
+    
+      <div className="note-card">
+        <Link to={`/notes/${id}`} onClick={()=>console.log(note)} className="icon-link">
+        <div>
       <h2>{title}</h2>
       <p>{caption}</p>
       {/* <span className="button"><button id="view" onClick={()=>onNoteClick(note)}>View</button></span> */}
-      <Link to={`/notes/${id}`} id="expand" onClick={()=>console.log(note)}>Expand</Link>
-      <button onClick={()=>onDeleteButtonClick(note)}>Delete</button>
+      <img id="expand" src={expand} />
+      {/* <button onClick={()=>onDeleteButtonClick(note)}>Delete</button> */}
+      </div></Link>
     </div>
+    
   );
 }
 

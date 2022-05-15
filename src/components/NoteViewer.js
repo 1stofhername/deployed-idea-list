@@ -21,6 +21,7 @@ function NoteViewer({ onEditButtonClick, onDeleteButtonClick }) {
   if(note){
   return (
     <div className="note-detail-container">
+      <div><Link id="x" to={"/"}>View All Notes</Link></div>
 
       {note.tags?
       <div id="tag-container">
@@ -33,7 +34,6 @@ function NoteViewer({ onEditButtonClick, onDeleteButtonClick }) {
       <p>{note.body}</p>
       <Link to={`/edit/${id}`} onClick={()=>onEditButtonClick(note)}>Edit</Link>
       <button onClick={()=>onDeleteButtonClick(note)}>Delete</button>
-      <Link id="x" to={"/"}>View All Notes</Link>
      </div>
   );} else {
     return <h1>Loading...</h1>
