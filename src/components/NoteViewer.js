@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import backArrow from '../assets/img/backArrow.svg';
 
 function NoteViewer({ onEditButtonClick, onDeleteButtonClick }) {
   const [note, setNote] = useState(null);
@@ -20,9 +21,9 @@ function NoteViewer({ onEditButtonClick, onDeleteButtonClick }) {
 
   if(note){
   return (
-    <div className="note-detail-container">
-      <div><Link id="x" to={"/"}>View All Notes</Link></div>
 
+    <div className="note-detail-container">
+    <div><Link className="icon-link" id="x" to={"/"}><img className="nav-icon" id="back" src={backArrow} /></Link></div>
       {note.tags?
       <div id="tag-container">
       <ul>
@@ -35,6 +36,7 @@ function NoteViewer({ onEditButtonClick, onDeleteButtonClick }) {
       <Link to={`/edit/${id}`} onClick={()=>onEditButtonClick(note)}>Edit</Link>
       <button onClick={()=>onDeleteButtonClick(note)}>Delete</button>
      </div>
+     
   );} else {
     return <h1>Loading...</h1>
   }

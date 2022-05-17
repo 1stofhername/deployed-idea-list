@@ -16,7 +16,7 @@ function NoteItem({ note, onDeleteButtonClick }) {
       <h2>{title}</h2>
       <p>{caption}</p>
       {/* <span className="button"><button id="view" onClick={()=>onNoteClick(note)}>View</button></span> */}
-      <img id="expand" src={expand} />
+      <img className="nav-icon" id="expand" src={expand} />
       {/* <button onClick={()=>onDeleteButtonClick(note)}>Delete</button> */}
       </div></Link>
     </div>
