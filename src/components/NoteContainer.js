@@ -168,13 +168,28 @@ function handleClearSearch () {
         handleTagReset={handleTagReset} 
         />
           {notes ?
-            <NoteGrid notes={filteredNotes} onDeleteButtonClick={onDeleteButtonClick} tagFilter={tagFilter} id={displayedNote.id} handleNewButtonClick={handleNewButtonClick} />: <h1>Loading...</h1>}
+            <NoteGrid 
+              notes={filteredNotes} 
+              onDeleteButtonClick={onDeleteButtonClick} 
+              tagFilter={tagFilter} id={displayedNote.id} 
+              handleNewButtonClick={handleNewButtonClick} 
+            />: 
+            <h1>Loading...</h1>}
         </Route>
         <Route path="/edit/:id">
-          <NoteEditor note={editNote} handleEditSubmit={handleEditSubmit} toggleEditNote={toggleEditNote} />
+          <NoteEditor 
+            note={editNote} 
+            handleEditSubmit={handleEditSubmit} 
+            toggleEditNote={toggleEditNote} 
+          />
         </Route>
         <Route exact path="/notes/:id">
-          <NoteViewer displayedNote={displayedNote} onEditButtonClick={toggleEditNote} onDeleteButtonClick={onDeleteButtonClick} onTagClick={onTagClick} />
+          <NoteViewer 
+            displayedNote={displayedNote} 
+            onEditButtonClick={toggleEditNote} 
+            onDeleteButtonClick={onDeleteButtonClick} 
+            onTagClick={onTagClick} 
+          />
         </Route>
         <Route path= '*'>
           <div>404 Not Found</div>
