@@ -31,10 +31,12 @@ function NoteViewer({ onEditButtonClick, onDeleteButtonClick }) {
         return <button key={uuidv4()} name={tag} className="tag">{tag}</button>})}
       </ul>
       </div>:null}
-      <h2>{note.title}</h2>
-      <p>{note.body}</p>
+      <h2 className="note-title">{note.title}</h2>
+      <p className="note-body">{note.body}</p>
+      <span className="button-container">
       <Link to={`/edit/${id}`} onClick={()=>onEditButtonClick(note)}>Edit</Link>
       <button onClick={()=>onDeleteButtonClick(note)}>Delete</button>
+      </span>
      </div>
      
   );} else {

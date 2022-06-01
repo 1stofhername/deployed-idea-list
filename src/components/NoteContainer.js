@@ -54,7 +54,7 @@ function NoteContainer () {
   // GET //
 
   useEffect(()=>{
-    fetch('https://json-server-heroku-hosting-2.herokuapp.com/notes')
+  fetch('https://json-server-heroku-hosting-2.herokuapp.com/notes')
   .then((res)=>res.json())
   .then((data)=>setNotes(data.reverse()))
 }, []);

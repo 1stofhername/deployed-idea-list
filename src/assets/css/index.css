@@ -166,6 +166,8 @@ div.all-notes-display div.note-card:hover {
   border:1px solid  #ffd519;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-image: linear-gradient(to right top, #f29e21, #ffd519);
+  transform:translate(3px, 3px);
+  transition-duration: .5s;
 }
 
 .detail {
@@ -307,10 +309,10 @@ div#add-new {
   
 }
 
-button.add-new:hover {
+/* button.add-new:hover {
   background-image: linear-gradient(to right top, #F27121, #ffd519);
   background-repeat: no-repeat; 
-}
+} */
 
 button.tag {
   display:inline;
