@@ -6,7 +6,6 @@ import NoteEditor from "./NoteEditor";
 import NoteViewer from "./NoteViewer";
 import NoteGrid from "./NoteGrid";
 import { useHistory } from "react-router-dom";
-import { data } from '../data/data';
 
 function NoteContainer () {
   
@@ -55,7 +54,7 @@ function NoteContainer () {
   // GET //
 
   useEffect(()=>{
-    setNotes(data.notes.reverse());
+    // setNotes(data.notes.reverse());
     console.log(notes);
   // fetch('https://json-server-heroku-hosting-2.herokuapp.com/notes')
   // .then((res)=>res.json())
