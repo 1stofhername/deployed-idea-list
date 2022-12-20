@@ -1,6 +1,4 @@
-{
-  "notes" : [
-    {
+[{
       "id": 2,
       "userId": 1,
       "title": "Perspiciatis a quidem dolorum.",
@@ -119,6 +117,4 @@
       "body": "Add note content",
       "tags": [],
       "id": 15
-    }
-  ]
-}
+    }]
