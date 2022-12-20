@@ -2,7 +2,7 @@ const notes = require('../../src/data/notes.json');
 
 exports.handler = async({ queryStringParameters }) => {
     const { id } = queryStringParameters;
-    const note = notes.notes.find((n) => n.id === id);
+    const note = notes.find((n) => n.id === id);
 
     if (!note) {
         return {
@@ -11,8 +11,10 @@ exports.handler = async({ queryStringParameters }) => {
         }
     }
 
+    else {
+
     return {
         statusCode: 200,
         body: JSON.stringify(note),
-    }
+    }}
 }
