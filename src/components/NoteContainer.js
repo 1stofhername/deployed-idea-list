@@ -59,7 +59,7 @@ function NoteContainer () {
   fetch('https://idealist-app.netlify.app/.netlify/functions/notes')
   .then((res)=>res.json())
   .then((data)=>setNotes(data.reverse()))
-  .then(console.log(data))
+  .then(console.log(notes))
 }, []);
 
 // CREATE //
