@@ -56,9 +56,10 @@ function NoteContainer () {
   useEffect(()=>{
     // setNotes(data.notes.reverse());
     console.log(notes);
-  // fetch('https://json-server-heroku-hosting-2.herokuapp.com/notes')
-  // .then((res)=>res.json())
-  // .then((data)=>setNotes(data.reverse()))
+  fetch('https://idealist-app.netlify.app/.netlify/functions/notes')
+  .then((res)=>res.json())
+  .then((data)=>setNotes(data.reverse()))
+  .then(console.log(data))
 }, []);
 
 // CREATE //
