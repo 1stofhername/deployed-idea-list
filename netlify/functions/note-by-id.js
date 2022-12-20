@@ -1,8 +1,8 @@
-const data = require('../../src/data/notes.json');
+const notes = require('../../src/data/notes.json');
 
 exports.handler = async({ queryStringParameters }) => {
     const { id } = queryStringParameters;
-    const note = data.notes.find((n) => n.id === id);
+    const note = notes.notes.find((n) => n.id === id);
 
     if (!note) {
         return {
