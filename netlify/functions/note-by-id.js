@@ -2,12 +2,12 @@ const notes = require('../../src/data/notes.json');
 
 exports.handler = async({ queryStringParameters }) => {
     const { id } = queryStringParameters;
-    const note = notes.find((n) => n.id === id);
+    const note = notes.find((n)=> n.id === parseInt(id))
 
     if (!note) {
         return {
             statusCode:404,
-            body: 'Not Found'
+            body: `${id} Not Found`
         }
     }
 
