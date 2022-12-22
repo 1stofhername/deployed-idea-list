@@ -6,17 +6,17 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import backArrow from '../assets/img/backArrow.svg';
 
-function NoteViewer({ onEditButtonClick, onDeleteButtonClick, note }) {
-  // const [note, setNote] = useState(null);
+function NoteViewer({ onEditButtonClick, onDeleteButtonClick }) {
+  const [note, setNote] = useState(null);
   const { id } = useParams();
   
   
-  // useEffect(()=>{
-  //   // fetch(`https://json-server-heroku-hosting-2.herokuapp.com/notes/${id}`)
-  //   // .then(r=>r.json())
-  //   // .then(data=> setNote(data))
-  //   setNote(notes.id)
-  // }, [id])
+  useEffect(()=>{
+    fetch(`https://idealist-app.netlify.app/api/get-note-by-id?id=${id}`)
+    .then(r=>r.json())
+    .then(data=> setNote(data))
+
+  }, [id])
 
   console.log(note)
 
