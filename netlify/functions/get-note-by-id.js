@@ -7,7 +7,7 @@ exports.handler = async({ queryStringParameters }) => {
     if (!note) {
         return {
             statusCode:404,
-            body: `${id} Not Found`
+            body: `${id} not Found`
         }
     }
 

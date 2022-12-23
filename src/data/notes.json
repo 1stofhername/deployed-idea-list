@@ -99,22 +99,8 @@
     },
     {
       "userId": 1,
-      "title": "New Note",
-      "body": "Add note content",
-      "tags": [],
-      "id": 13
-    },
-    {
-      "userId": 1,
-      "title": "New Note",
-      "body": "Add note content",
-      "tags": [],
-      "id": 14
-    },
-    {
-      "userId": 1,
-      "title": "New Note",
-      "body": "Add note content",
-      "tags": [],
+      "title": "Win",
+      "body": "Keep winning.",
+      "tags": ["to-do", "affirmations"],
       "id": 15
 }]
