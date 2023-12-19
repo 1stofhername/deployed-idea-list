@@ -19,17 +19,17 @@ function NoteContainer () {
 
 //Search and Filter
 
-  const filteredNotes = (sortedNotes.length===0 ? notes : sortedNotes)
-    .filter(note=>note.title.toLowerCase().includes(search.toLowerCase()))
-    .filter(note=> {
-      if (tagFilter==='All') {
-        return true 
-      } else if (tagFilter) {
-      return note.tags.find(element=>element===tagFilter)
-    } else if (!tagFilter) {
-      setTagFilter("All");
-    }
-  })
+  // const filteredNotes = (sortedNotes.length===0 ? notes : sortedNotes)
+  //   .filter(note=>note.title.toLowerCase().includes(search))
+  //   .filter(note=> {
+  //     if (tagFilter==='All') {
+  //       return true 
+  //     } else if (tagFilter) {
+  //     return note.tags.find(element=>element===tagFilter)
+  //   } else if (!tagFilter) {
+  //     setTagFilter("All");
+  //   }
+  // })
   
   function handleSortTitle (){
     if (sortedNotes.length===0){
@@ -63,17 +63,18 @@ function NoteContainer () {
 // CREATE //
 
 function handleNewButtonClick () {
-  fetch('https://json-server-heroku-hosting-2.herokuapp.com/notes', {
+  fetch('http://localhost:8888/.netlify/functions/notes', {
     method:"POST",
     headers:{
       "Content-Type":"application/json",
       "Accept":"application/json",
     },
     body:JSON.stringify({
-      userId:1,
-      title:"New Note",
-      body:"Add note content",
-      tags:[]
+      // userId:1,
+      // title:"New Note",
+      // body:"Add note content",
+      // tags:[]
+      content: "hello"
     })
   })
   .then(res=>res.json())
@@ -170,7 +171,7 @@ function handleClearSearch () {
         />
           {notes ?
             <NoteGrid 
-              notes={filteredNotes} 
+              notes={notes} 
               onDeleteButtonClick={onDeleteButtonClick} 
               tagFilter={tagFilter} id={displayedNote.id} 
               handleNewButtonClick={handleNewButtonClick} 
