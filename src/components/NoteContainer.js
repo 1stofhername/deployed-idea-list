@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Search from "./Search";
 import TagFilter from "./TagFilter";
 import NoteEditor from "./NoteEditor";
-import NoteViewer from "./NoteViewer";
+import SingleNoteViewer from "./SingleNoteViewer";
 import NoteGrid from "./NoteGrid";
 import { useHistory } from "react-router-dom";
 
@@ -186,7 +186,7 @@ function handleClearSearch () {
           />
         </Route>
         <Route exact path="/notes/:id">
-          <NoteViewer 
+          <SingleNoteViewer 
             displayedNote={displayedNote} 
             onEditButtonClick={toggleEditNote} 
             onDeleteButtonClick={onDeleteButtonClick} 

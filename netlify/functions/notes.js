@@ -16,6 +16,7 @@ exports.handler = async function (event, context) {
         //     content: requestBody.content,
         // };
         console.log(requestBody);
+        console.log(newNote);
 
         notes.push(newNote);
 
