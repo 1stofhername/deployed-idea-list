@@ -54,8 +54,8 @@ function NoteContainer () {
   // GET //
 
   useEffect(()=>{
-  fetch('https://idealist-app.netlify.app/api/get-notes')
-  .then((res)=>res.json())
+  fetch('https://idealist-app.netlify.app/.netlify/functions/get-notes')
+  .then((res)=>res.json(console.log(res)))
   .then((data)=>setNotes(data.notes.reverse()))
   .then(console.log(notes))
 }, []);
