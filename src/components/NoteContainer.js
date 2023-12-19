@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 
 function NoteContainer () {
   
+  const apiUrl = "http://localhost:8888/.netlify/functions/get-notes";
   const [notes, setNotes] = useState([]);
   const [displayedNote, setDisplayedNote]=useState("");
   const [search, setSearch] = useState("");
@@ -54,7 +55,7 @@ function NoteContainer () {
   // GET //
 
   useEffect(()=>{
-  fetch('https://idealist-app.netlify.app/.netlify/functions/get-notes')
+  fetch(apiUrl)
   .then((res)=>res.json(console.log(res)))
   .then((data)=>setNotes(data.notes.reverse()))
   .then(console.log(notes))
