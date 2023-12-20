@@ -14,11 +14,11 @@ function NoteViewer({ onEditButtonClick, onDeleteButtonClick }) {
   useEffect(()=>{
     fetch(`http://localhost:8888/.netlify/functions/get-note-by-id?id=${id}`)
     .then(r=>r.json())
-    .then(data=> setNote(data))
-
-  }, [id])
-
-  console.log(note)
+    .then(data=> {
+      setNote(data); 
+      console.log(data);
+    })
+  }, [id]);
 
   if(note){
   return (

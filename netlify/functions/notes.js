@@ -16,9 +16,9 @@ exports.handler = async function (event, context) {
         //     content: requestBody.content,
         // };
         console.log(requestBody);
-        console.log(newNote);
+        // console.log(newNote);
 
-        notes.push(newNote);
+        // notes.push(newNote);
 
         return {
             statusCode: 201,
