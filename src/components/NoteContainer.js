@@ -63,7 +63,7 @@ function NoteContainer () {
 // CREATE //
 
 function handleNewButtonClick () {
-  fetch('http://localhost:8888/.netlify/functions/notes', {
+  fetch('https://idealist-app.netlify.app/.netlify/functions/notes', {
     method:"POST",
     headers:{
       "Content-Type":"application/json",
