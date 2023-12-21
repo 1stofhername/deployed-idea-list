@@ -3,13 +3,13 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 
 function NoteEditor({ note, handleEditSubmit, toggleEditNote }) {
-  const [editedNoteContent, setEditedNoteContent]=useState(note);
+  const [editedNoteContent, setEditedNoteContent]=useState(null);
   const { id } = useParams();
 
   useEffect(()=>{
     fetch(`http://localhost:8888/.netlify/functions/get-note-by-id?id=${id}`)
     .then(r=>r.json())
-    .then(data=> setEditedNoteContent(data))
+    .then(data=> setEditedNoteContent(data.note))
   }, [id])
   console.log("id:", id)
   function handleFormChange (event){
@@ -25,7 +25,7 @@ function NoteEditor({ note, handleEditSubmit, toggleEditNote }) {
     handleEditSubmit(editedNoteContent);
   }
 
-  if(note){
+  if(editedNoteContent){
     return (
       <form className="note-editor" onSubmit={e=>onEditSubmit(e)}>
         <input type="text" name="title" value={editedNoteContent.title} onChange={e=>handleFormChange(e)} />
