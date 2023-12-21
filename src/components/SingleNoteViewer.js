@@ -16,7 +16,6 @@ function NoteViewer({ onEditButtonClick, onDeleteButtonClick }) {
     .then(r=>r.json())
     .then(data=> {
       setNote(data.note); 
-      console.log(data);
     })
   }, [id]);
 
