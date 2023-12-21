@@ -7,11 +7,11 @@ function NoteEditor({ note, handleEditSubmit, toggleEditNote }) {
   const { id } = useParams();
 
   useEffect(()=>{
-    fetch(`https://json-server-heroku-hosting-2.herokuapp.com/notes/${id}`)
+    fetch(`http://localhost:8888/.netlify/functions/get-note-by-id/${id}`)
     .then(r=>r.json())
     .then(data=> setEditedNoteContent(data))
   }, [id])
-
+  console.log("id:", id)
   function handleFormChange (event){
     setEditedNoteContent({...editedNoteContent, [event.target.name]:event.target.value})
   }

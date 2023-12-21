@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Search from "./Search";
 import TagFilter from "./TagFilter";
 import NoteEditor from "./NoteEditor";
-import NoteViewer from "./NoteViewer";
+import SingleNoteViewer from "./SingleNoteViewer";
 import NoteGrid from "./NoteGrid";
 import { useHistory } from "react-router-dom";
 
@@ -19,17 +19,17 @@ function NoteContainer () {
 
 //Search and Filter
 
-  const filteredNotes = (sortedNotes.length===0 ? notes : sortedNotes)
-    .filter(note=>note.title.toLowerCase().includes(search.toLowerCase()))
-    .filter(note=> {
-      if (tagFilter==='All') {
-        return true 
-      } else if (tagFilter) {
-      return note.tags.find(element=>element===tagFilter)
-    } else if (!tagFilter) {
-      setTagFilter("All");
-    }
-  })
+  // const filteredNotes = (sortedNotes.length===0 ? notes : sortedNotes)
+  //   .filter(note=>note.title.toLowerCase().includes(search))
+  //   .filter(note=> {
+  //     if (tagFilter==='All') {
+  //       return true 
+  //     } else if (tagFilter) {
+  //     return note.tags.find(element=>element===tagFilter)
+  //   } else if (!tagFilter) {
+  //     setTagFilter("All");
+  //   }
+  // })
   
   function handleSortTitle (){
     if (sortedNotes.length===0){
@@ -54,8 +54,8 @@ function NoteContainer () {
   // GET //
 
   useEffect(()=>{
-  fetch('https://idealist-app.netlify.app/.netlify/functions/get-notes')
-  .then((res)=>res.json())
+  fetch("http://localhost:8888/.netlify/functions/notes")
+  .then((res)=>res.json(console.log(res)))
   .then((data)=>setNotes(data.notes.reverse()))
   .then(console.log(notes))
 }, []);
@@ -63,17 +63,18 @@ function NoteContainer () {
 // CREATE //
 
 function handleNewButtonClick () {
-  fetch('https://json-server-heroku-hosting-2.herokuapp.com/notes', {
+  fetch('https://idealist-app.netlify.app/.netlify/functions/notes', {
     method:"POST",
     headers:{
       "Content-Type":"application/json",
       "Accept":"application/json",
     },
     body:JSON.stringify({
-      userId:1,
-      title:"New Note",
-      body:"Add note content",
-      tags:[]
+      // userId:1,
+      // title:"New Note",
+      // body:"Add note content",
+      // tags:[]
+      content: "hello"
     })
   })
   .then(res=>res.json())
@@ -170,7 +171,7 @@ function handleClearSearch () {
         />
           {notes ?
             <NoteGrid 
-              notes={filteredNotes} 
+              notes={notes} 
               onDeleteButtonClick={onDeleteButtonClick} 
               tagFilter={tagFilter} id={displayedNote.id} 
               handleNewButtonClick={handleNewButtonClick} 
@@ -185,7 +186,7 @@ function handleClearSearch () {
           />
         </Route>
         <Route exact path="/notes/:id">
-          <NoteViewer 
+          <SingleNoteViewer 
             displayedNote={displayedNote} 
             onEditButtonClick={toggleEditNote} 
             onDeleteButtonClick={onDeleteButtonClick} 
