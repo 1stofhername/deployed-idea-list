@@ -1,8 +1,8 @@
 const notes = require('../../src/data/notes.json');
 
-exports.handler = async({ event, context }) => {
+exports.handler = async({ queryStringParameters }) => {
     try {
-        const { id } = event.queryStringParameters;
+        const { id } = queryStringParameters;
         
         if (!id) {
             return {

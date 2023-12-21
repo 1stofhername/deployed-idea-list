@@ -12,7 +12,7 @@ function NoteViewer({ onEditButtonClick, onDeleteButtonClick }) {
   
   
   useEffect(()=>{
-    fetch(`https://idealist-app.netlify.app/.netlify/functions/get-note-by-id?id=${id}`)
+    fetch(`http://localhost:8888/.netlify/functions/get-note-by-id?id=${id}`)
     .then(r=>r.json())
     .then(data=> {
       setNote(data); 
