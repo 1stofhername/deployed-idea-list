@@ -25,17 +25,20 @@ function NoteEditor({ note, handleEditSubmit, toggleEditNote }) {
     handleEditSubmit(editedNoteContent);
   }
 
-  return (
-    <form className="note-editor" onSubmit={e=>onEditSubmit(e)}>
-      <input type="text" name="title" value={editedNoteContent.title} onChange={e=>handleFormChange(e)} />
-      <textarea name="body" value={editedNoteContent.body} onChange={e=>handleFormChange(e)} />
-      <input type="text" name="tags" id="tags" value={editedNoteContent.tags} placeholder="Enter tags separated by ," onChange={(e)=>handleTagChange(e)} />
-      <div className="button-row">
-        <input className="button" type="submit" value="Save" onSubmit={()=>onEditSubmit}/>
-        <button onClick={toggleEditNote()}>Cancel</button>
-      </div>
-    </form>
-  );
+  if(note){
+    return (
+      <form className="note-editor" onSubmit={e=>onEditSubmit(e)}>
+        <input type="text" name="title" value={editedNoteContent.title} onChange={e=>handleFormChange(e)} />
+        <textarea name="body" value={editedNoteContent.body} onChange={e=>handleFormChange(e)} />
+        <input type="text" name="tags" id="tags" value={editedNoteContent.tags} placeholder="Enter tags separated by ," onChange={(e)=>handleTagChange(e)} />
+        <div className="button-row">
+          <input className="button" type="submit" value="Save" onSubmit={()=>onEditSubmit}/>
+          <button onClick={toggleEditNote()}>Cancel</button>
+        </div>
+      </form>
+    )} else {
+      return <h1>Loading...</h1>;
+    };
 }
 
 export default NoteEditor;
