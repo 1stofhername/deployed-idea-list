@@ -33,7 +33,7 @@ function NoteEditor({ note, handleEditSubmit, toggleEditNote }) {
         <input type="text" name="tags" id="tags" value={editedNoteContent.tags} placeholder="Enter tags separated by ," onChange={(e)=>handleTagChange(e)} />
         <div className="button-row">
           <input className="button" type="submit" value="Save" onSubmit={()=>onEditSubmit}/>
-          <button onClick={toggleEditNote()}>Cancel</button>
+          <button onClick={toggleEditNote}>Cancel</button>
         </div>
       </form>
     )} else {
