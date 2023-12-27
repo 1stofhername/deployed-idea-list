@@ -11,7 +11,7 @@ function NoteEditor({ note, handleEditSubmit, toggleEditNote }) {
     .then(r=>r.json())
     .then(data=> setEditedNoteContent(data.note))
   }, [id])
-  console.log("id:", id)
+
   function handleFormChange (event){
     setEditedNoteContent({...editedNoteContent, [event.target.name]:event.target.value})
   }
