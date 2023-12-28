@@ -143,5 +143,12 @@
     "title": "New Note",
     "body": "hello",
     "tags": []
+  },
+  {
+    "id": 1703733389095,
+    "userId": 2,
+    "title": "",
+    "body": "",
+    "tags": []
   }
 ]

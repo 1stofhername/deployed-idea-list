@@ -74,8 +74,8 @@ function handleNewButtonClick () {
     body:JSON.stringify({
       userId:2,
       id:Date.now(),
-      title:"New Note",
-      body: "hello",
+      title:"",
+      body: "",
       tags:[],
     })
   })
@@ -84,7 +84,7 @@ function handleNewButtonClick () {
     let newNotes= [data.note, ...notes]; 
     setNotes(newNotes);
     setDisplayedNote(data.note);
-    history.push(`/notes/${data.note.id}`);
+    history.push(`/edit/${data.note.id}`);
   })
   
 }
