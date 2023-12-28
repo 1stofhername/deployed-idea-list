@@ -34,10 +34,10 @@ exports.handler = async function (event, context) {
             statusCode: 201,
             body: JSON.stringify({
                 message: `Note created`, 
-                data: newNote})
+                note: newNote})
             };
         }
-        
+
     } catch (error) {
         console.error('Error creating note:', error);
         return {

@@ -61,7 +61,7 @@ function NoteContainer () {
 
 // CREATE //
 
-function handleNewButtonClick (event) {
+function handleNewButtonClick () {
   fetch('http://localhost:8888/.netlify/functions/notes', {
     method:"POST",
     headers:{
@@ -78,8 +78,10 @@ function handleNewButtonClick (event) {
   })
   .then(res=>res.json())
   .then(data=>{
-    let newNotes= [data.data, ...notes]; setNotes(newNotes);setDisplayedNote(data.data)
-    history.push(`/notes/${data.data.id}`);
+    let newNotes= [data.note, ...notes]; 
+    setNotes(newNotes);
+    setDisplayedNote(data.note);
+    history.push(`/notes/${data.note.id}`);
   })
   
 }
