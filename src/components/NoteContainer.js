@@ -73,7 +73,6 @@ function handleNewButtonClick () {
     },
     body:JSON.stringify({
       userId:2,
-      id:Date.now(),
       title:"",
       body: "",
       tags:[],
