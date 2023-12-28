@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 
 function NoteContainer () {
   
+  const apiUrl = "http://localhost:8888/.netlify/functions/notes"
   const [notes, setNotes] = useState([]);
   const [displayedNote, setDisplayedNote]=useState("");
   const [search, setSearch] = useState("");
@@ -16,6 +17,8 @@ function NoteContainer () {
   const [editNote, setEditNote]=useState("");
   const [sortedNotes, setSortedNotes]=useState([]);
   const history = useHistory();
+
+  
 
 //Search and Filter
 
@@ -54,7 +57,7 @@ function NoteContainer () {
   // GET //
 
   useEffect(()=>{
-  fetch("http://localhost:8888/.netlify/functions/notes")
+  fetch(apiUrl)
   .then((res)=>res.json())
   .then((data)=>setNotes(data.notes.reverse()))
 }, []);
@@ -62,7 +65,7 @@ function NoteContainer () {
 // CREATE //
 
 function handleNewButtonClick () {
-  fetch('http://localhost:8888/.netlify/functions/notes', {
+  fetch(apiUrl, {
     method:"POST",
     headers:{
       "Content-Type":"application/json",
@@ -89,7 +92,7 @@ function handleNewButtonClick () {
 // UPDATE //
 
 function handleEditSubmit (editedNoteObj){
-  fetch(`https://json-server-heroku-hosting-2.herokuapp.com/notes/${editedNoteObj.id}`, {
+  fetch(`${apiUrl}/${editedNoteObj.id}`, {
     method:"PATCH",
     headers:{
       "Content-Type":"application/json",
@@ -114,7 +117,7 @@ function handleEditSubmit (editedNoteObj){
 // DELETE //
 
 function onDeleteButtonClick (item) {
-  fetch(`https://json-server-heroku-hosting-2.herokuapp.com/notes/${item.id}`, {
+  fetch(`${apiUrl}/${item.id}`, {
     method:"DELETE",
   })
   .then(res=>res.json())
