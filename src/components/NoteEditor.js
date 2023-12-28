@@ -10,20 +10,20 @@ function NoteEditor({ API_URL, handleEditSubmit, toggleEditNote }) {
     fetch(`${API_URL}/get-note-by-id?id=${id}`)
     .then(r=>r.json())
     .then(data=> setEditedNoteContent(data.note))
-  }, [id])
+  }, [id]);
 
   function handleFormChange (e){
     setEditedNoteContent({...editedNoteContent, [e.target.name]:e.target.value})
-  }
+  };
   
   function handleTagChange (e) {
     setEditedNoteContent({...editedNoteContent, [e.target.name]:e.target.value.split(',')})
-  }
+  };
 
   function onEditSubmit (e) {
     e.preventDefault();
     handleEditSubmit(editedNoteContent);
-  }
+  };
 
   if(editedNoteContent){
     return (

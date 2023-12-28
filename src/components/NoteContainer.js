@@ -177,7 +177,7 @@ function handleClearSearch () {
             <NoteGrid 
               notes={notes} 
               onDeleteButtonClick={onDeleteButtonClick} 
-              tagFilter={tagFilter} id={displayedNote.id} 
+              tagFilter={tagFilter} 
               handleNewButtonClick={handleNewButtonClick} 
             />: 
             <h1>Loading...</h1>}
