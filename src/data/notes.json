@@ -108,47 +108,5 @@
       "affirmations"
     ],
     "id": 15
-  },
-  {
-    "id": 1703731317621,
-    "userId": 2,
-    "title": "New Note",
-    "body": "hello",
-    "tags": []
-  },
-  {
-    "id": 1703731446958,
-    "userId": 2,
-    "title": "New Note",
-    "body": "hello",
-    "tags": []
-  },
-  {
-    "id": 1703731457858,
-    "userId": 2,
-    "title": "New Note",
-    "body": "hello",
-    "tags": []
-  },
-  {
-    "id": 1703731612547,
-    "userId": 2,
-    "title": "New Note",
-    "body": "hello",
-    "tags": []
-  },
-  {
-    "id": 1703732841074,
-    "userId": 2,
-    "title": "New Note",
-    "body": "hello",
-    "tags": []
-  },
-  {
-    "id": 1703733389095,
-    "userId": 2,
-    "title": "",
-    "body": "",
-    "tags": []
   }
 ]

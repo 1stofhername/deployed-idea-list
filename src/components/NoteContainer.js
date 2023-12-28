@@ -186,7 +186,6 @@ function handleClearSearch () {
         <Route path="/edit/:id">
           <NoteEditor 
             apiUrl={apiUrl}
-            note={editNote} 
             handleEditSubmit={handleEditSubmit} 
             toggleEditNote={toggleEditNote} 
           />

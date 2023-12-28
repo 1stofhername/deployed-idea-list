@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 
-function NoteEditor({ note, handleEditSubmit, toggleEditNote }) {
+function NoteEditor({ apiUrl, handleEditSubmit, toggleEditNote }) {
   const [editedNoteContent, setEditedNoteContent]=useState(null);
   const { id } = useParams();
 
   useEffect(()=>{
-    fetch(`http://localhost:8888/.netlify/functions/get-note-by-id?id=${id}`)
+    fetch(`${apiUrl}get-note-by-id?id=${id}`)
     .then(r=>r.json())
     .then(data=> setEditedNoteContent(data.note))
   }, [id])
