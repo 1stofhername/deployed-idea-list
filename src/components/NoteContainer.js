@@ -61,7 +61,7 @@ function NoteContainer () {
 
 // CREATE //
 
-function handleNewButtonClick () {
+function handleNewButtonClick (event) {
   fetch('http://localhost:8888/.netlify/functions/notes', {
     method:"POST",
     headers:{
@@ -69,14 +69,19 @@ function handleNewButtonClick () {
       "Accept":"application/json",
     },
     body:JSON.stringify({
-      editNote
+      userId:2,
+      id:Date.now(),
+      title:"New Note",
+      body: "hello",
+      tags:[],
     })
   })
   .then(res=>res.json())
   .then(data=>{
-    let newNotes= [data, ...notes]; setNotes(newNotes);setDisplayedNote(data);
-    history.push(`/notes/${data.id}`);
+    let newNotes= [data.data, ...notes]; setNotes(newNotes);setDisplayedNote(data.data)
+    history.push(`/notes/${data.data.id}`);
   })
+  
 }
 
 // UPDATE //
