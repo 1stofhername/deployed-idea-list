@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 
 function NoteContainer () {
   
-  const apiUrl = "http://localhost:8888/.netlify/functions/notes"
+  const apiUrl = "http://localhost:8888/.netlify/functions/"
   const [notes, setNotes] = useState([]);
   const [displayedNote, setDisplayedNote]=useState("");
   const [search, setSearch] = useState("");
@@ -57,7 +57,7 @@ function NoteContainer () {
   // GET //
 
   useEffect(()=>{
-  fetch(apiUrl)
+  fetch(`${apiUrl}notes`)
   .then((res)=>res.json())
   .then((data)=>setNotes(data.notes.reverse()))
 }, []);
@@ -65,7 +65,7 @@ function NoteContainer () {
 // CREATE //
 
 function handleNewButtonClick () {
-  fetch(apiUrl, {
+  fetch(`${apiUrl}notes`, {
     method:"POST",
     headers:{
       "Content-Type":"application/json",
@@ -92,7 +92,7 @@ function handleNewButtonClick () {
 // UPDATE //
 
 function handleEditSubmit (editedNoteObj){
-  fetch(`${apiUrl}/${editedNoteObj.id}`, {
+  fetch(`${apiUrl}notes/${editedNoteObj.id}`, {
     method:"PATCH",
     headers:{
       "Content-Type":"application/json",
@@ -110,14 +110,14 @@ function handleEditSubmit (editedNoteObj){
       }
     });
       setNotes(updatedNotes);
-      history.push(`/notes/${data.id}`)
+      history.push(`notes/${data.id}`)
     })
 };
 
 // DELETE //
 
 function onDeleteButtonClick (item) {
-  fetch(`${apiUrl}/${item.id}`, {
+  fetch(`${apiUrl}notes/${item.id}`, {
     method:"DELETE",
   })
   .then(res=>res.json())
@@ -185,6 +185,7 @@ function handleClearSearch () {
         </Route>
         <Route path="/edit/:id">
           <NoteEditor 
+            apiUrl={apiUrl}
             note={editNote} 
             handleEditSubmit={handleEditSubmit} 
             toggleEditNote={toggleEditNote} 
