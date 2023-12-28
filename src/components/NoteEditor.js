@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 
-function NoteEditor({ apiUrl, handleEditSubmit, toggleEditNote }) {
+function NoteEditor({ API_URL, handleEditSubmit, toggleEditNote }) {
   const [editedNoteContent, setEditedNoteContent]=useState(null);
   const { id } = useParams();
 
   useEffect(()=>{
-    fetch(`${apiUrl}get-note-by-id?id=${id}`)
+    fetch(`${API_URL}/get-note-by-id?id=${id}`)
     .then(r=>r.json())
     .then(data=> setEditedNoteContent(data.note))
   }, [id])

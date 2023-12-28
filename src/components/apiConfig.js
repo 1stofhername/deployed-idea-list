@@ -5,4 +5,4 @@ const API_URLS = {
   };
 
   const stage = process.env.STAGE || 'development';
-  const API_URL = API_URLS[stage];
+  export const API_URL = API_URLS[stage];
