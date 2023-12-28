@@ -12,16 +12,16 @@ function NoteEditor({ API_URL, handleEditSubmit, toggleEditNote }) {
     .then(data=> setEditedNoteContent(data.note))
   }, [id])
 
-  function handleFormChange (event){
-    setEditedNoteContent({...editedNoteContent, [event.target.name]:event.target.value})
+  function handleFormChange (e){
+    setEditedNoteContent({...editedNoteContent, [e.target.name]:e.target.value})
   }
   
   function handleTagChange (e) {
     setEditedNoteContent({...editedNoteContent, [e.target.name]:e.target.value.split(',')})
   }
 
-  function onEditSubmit (event) {
-    event.preventDefault();
+  function onEditSubmit (e) {
+    e.preventDefault();
     handleEditSubmit(editedNoteContent);
   }
 
