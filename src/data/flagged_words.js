@@ -1,1 +1,1 @@
-const NO_LIST = ['fuck','nigg','ass','shit','sex'];
+module.exports = ["fuck", "shit", "bitch", "cunt", "whore"]

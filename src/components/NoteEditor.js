@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import { useEffect } from "react";
 
 function NoteEditor({ API_URL, handleEditSubmit, toggleEditNote }) {
   const [editedNoteContent, setEditedNoteContent]=useState(null);
   const { id } = useParams();
+  const history = useHistory();
 
   useEffect(()=>{
     fetch(`${API_URL}/get-note-by-id?id=${id}`)
@@ -23,6 +25,7 @@ function NoteEditor({ API_URL, handleEditSubmit, toggleEditNote }) {
   function onEditSubmit (e) {
     e.preventDefault();
     handleEditSubmit(editedNoteContent);
+    history.push(`/notes/${id}`);
   };
 
   if(editedNoteContent){

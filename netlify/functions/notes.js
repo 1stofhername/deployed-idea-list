@@ -2,7 +2,7 @@ const fs = require('fs');
 
 let notes = require('../../src/data/notes.json');
 
-let disallowedWords = require('../../src/data/flagged_words');
+let disallowedWords = require('../../src/data/flagged_words.js');
 
 exports.handler = async function (event) {
   try {
@@ -18,7 +18,9 @@ exports.handler = async function (event) {
         fs.writeFileSync(dataPath, JSON.stringify(data, null, 2), 'utf8');
       };
 
+      // GET request
     if (event.httpMethod === 'GET') {
+      
       return {
         statusCode: 200,
         body: JSON.stringify({ notes }),
@@ -26,7 +28,7 @@ exports.handler = async function (event) {
       
     }
 
-    //POST request 
+    // POST request 
 
     if (event.httpMethod === 'POST') {
       
@@ -53,7 +55,7 @@ exports.handler = async function (event) {
       };
     }
 
-    //PATCH request
+    // PATCH request
 
     if (event.httpMethod === 'PATCH') {
         const requestBody = JSON.parse(event.body);
@@ -73,7 +75,7 @@ exports.handler = async function (event) {
           updateNotesArrayById(patchedNote);
 
           writeData(notes);
-    
+
           return {
             statusCode: 201,
             body: JSON.stringify({
@@ -94,6 +96,7 @@ exports.handler = async function (event) {
 
 function checkDisallowedWords(data) {
     if (data.title && containsDisallowedWord(data.title)) {
+      console.error("Error: The note body contains a disallowed word");
       throw new Error('Error: The note title contains a disallowed word.');
     }
   

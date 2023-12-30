@@ -109,7 +109,6 @@ function handleEditSubmit (editedNoteObj){
       }
     });
       setNotes(updatedNotes);
-      history.push(`notes/${data.id}`)
     })
 };
 
