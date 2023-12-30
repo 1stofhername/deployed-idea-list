@@ -115,7 +115,7 @@ function handleEditSubmit (editedNoteObj){
 // DELETE //
 
 function onDeleteButtonClick (item) {
-  fetch(`${API_URL}/notes/${item.id}`, {
+  fetch(`${API_URL}/notes?id=${item.id}`, {
     method:"DELETE",
   })
   .then(res=>res.json())

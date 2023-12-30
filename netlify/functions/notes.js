@@ -85,6 +85,10 @@ exports.handler = async function (event) {
           };
         
     }
+
+    if(event.httpMethod === "DELETE"){
+      let queryParams = event.queryStringParameters;
+    }
   } catch (error) {
     console.error('Error creating note:', error);
     return {
