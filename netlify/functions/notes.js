@@ -124,7 +124,7 @@ function checkDisallowedWords(data) {
     return value && value.trim() !== '';
   }
 
-  //Function to return note by id
+  //Function to find and update note by id
 
   function updateNotesArrayById (updatedNote) {
     const indexToUpdate = notes.findIndex(note => note.id === updatedNote.id );
@@ -132,6 +132,5 @@ function checkDisallowedWords(data) {
 
     if (indexToUpdate) {
       notes[indexToUpdate] = updatedNote;
-      {console.log(indexToUpdate)}
     }
   }
