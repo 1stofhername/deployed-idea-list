@@ -2,9 +2,7 @@ const fs = require('fs');
 
 let notes = require('../../src/data/notes.json');
 
-
-// Example array of disallowed words
-const disallowedWords = ['word1', 'word2', 'word3'];
+let disallowedWords = require('../../src/data/flagged_words');
 
 exports.handler = async function (event) {
   try {
@@ -25,14 +23,14 @@ exports.handler = async function (event) {
         statusCode: 200,
         body: JSON.stringify({ notes }),
       };
+      
     }
 
     //POST request 
 
     if (event.httpMethod === 'POST') {
+      
       const requestBody = JSON.parse(event.body);
-
-    
       
       const newNote = {
         id: Date.now(),
@@ -84,9 +82,6 @@ exports.handler = async function (event) {
             }),
           };
         
-        
-       
-        
     }
   } catch (error) {
     console.error('Error creating note:', error);
@@ -108,18 +103,19 @@ function checkDisallowedWords(data) {
   }
 
   function validateContent (data){
-    
         if (!isNotEmpty(data.title) && !isNotEmpty(data.body)){
             return data;
         } 
   }
   
   // Function to check if a string contains disallowed words
+
   function containsDisallowedWord(value) {
     return disallowedWords.some((word) => value.includes(word));
   }
   
   // Function to check if a string is not empty
+
   function isNotEmpty(value) {
     return value && value.trim() !== '';
   }

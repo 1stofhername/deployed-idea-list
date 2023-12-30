@@ -1,0 +1,1 @@
+const NO_LIST = ['fuck','nigg','ass','shit','sex'];
