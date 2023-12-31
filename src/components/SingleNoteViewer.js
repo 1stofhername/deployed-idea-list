@@ -7,12 +7,13 @@ import { Link } from "react-router-dom";
 import backArrow from '../assets/img/backArrow.svg';
 
 function NoteViewer({ onEditButtonClick, onDeleteButtonClick }) {
+  const { API_URL } = require('./apiConfig');
   const [note, setNote] = useState(null);
   const { id } = useParams();
   
   
   useEffect(()=>{
-    fetch(`http://localhost:8888/api/get-note-by-id?id=${id}`)
+    fetch(`${API_URL}/get-note-by-id?id=${id}`)
     .then(r=>r.json())
     .then(data=> {
       setNote(data.note); 
