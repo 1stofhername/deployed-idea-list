@@ -9,16 +9,6 @@ function NoteEditor({ API_URL, handleEditSubmit, toggleEditNote }) {
   const history = useHistory();
 
   useEffect(()=>{
-<<<<<<< HEAD
-    fetch(`http://localhost:8888/.netlify/functions/get-note-by-id/${id}`)
-    .then(r=>r.json())
-    .then(data=> setEditedNoteContent(data))
-  }, [id])
-  console.log("id:", id)
-  function handleFormChange (event){
-    setEditedNoteContent({...editedNoteContent, [event.target.name]:event.target.value})
-  }
-=======
     fetch(`${API_URL}/get-note-by-id?id=${id}`)
     .then(r=>r.json())
     .then(data=> setEditedNoteContent(data.note))
@@ -27,7 +17,6 @@ function NoteEditor({ API_URL, handleEditSubmit, toggleEditNote }) {
   function handleFormChange (e){
     setEditedNoteContent({...editedNoteContent, [e.target.name]:e.target.value})
   };
->>>>>>> dev
   
   function handleTagChange (e) {
     setEditedNoteContent({...editedNoteContent, [e.target.name]:e.target.value.split(',')})

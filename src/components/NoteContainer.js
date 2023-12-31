@@ -57,42 +57,25 @@ function NoteContainer () {
   // GET //
 
   useEffect(()=>{
-<<<<<<< HEAD
-  fetch("http://localhost:8888/.netlify/functions/notes")
-  .then((res)=>res.json(console.log(res)))
-=======
   fetch(`${API_URL}/notes`)
   .then((res)=>res.json())
->>>>>>> dev
   .then((data)=>setNotes(data.notes.reverse()))
 }, []);
 
 // CREATE //
 
 function handleNewButtonClick () {
-<<<<<<< HEAD
-  fetch('https://idealist-app.netlify.app/.netlify/functions/notes', {
-=======
   fetch(`${API_URL}/notes`, {
->>>>>>> dev
     method:"POST",
     headers:{
       "Content-Type":"application/json",
       "Accept":"application/json",
     },
     body:JSON.stringify({
-<<<<<<< HEAD
-      // userId:1,
-      // title:"New Note",
-      // body:"Add note content",
-      // tags:[]
-      content: "hello"
-=======
       userId:2,
       title:"",
       body: "",
       tags:[],
->>>>>>> dev
     })
   })
   .then(res=>res.json())
