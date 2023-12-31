@@ -4,5 +4,5 @@ const API_URLS = {
     production: 'https://idealist-app.netlify.app/.netlify/functions',
   };
 
-  const stage = process.env.STAGE || 'development';
+  const stage = process.env.STAGE || 'production';
   export const API_URL = API_URLS[stage];
