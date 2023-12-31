@@ -1,0 +1,1 @@
+module.exports = ["fuck", "shit", "bitch", "cunt", "whore"]

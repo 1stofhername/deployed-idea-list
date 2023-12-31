@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 
 function NoteContainer () {
   
+  const { API_URL } = require('./apiConfig');
   const [notes, setNotes] = useState([]);
   const [displayedNote, setDisplayedNote]=useState("");
   const [search, setSearch] = useState("");
@@ -16,6 +17,8 @@ function NoteContainer () {
   const [editNote, setEditNote]=useState("");
   const [sortedNotes, setSortedNotes]=useState([]);
   const history = useHistory();
+
+  
 
 //Search and Filter
 
@@ -54,40 +57,58 @@ function NoteContainer () {
   // GET //
 
   useEffect(()=>{
+<<<<<<< HEAD
   fetch("http://localhost:8888/.netlify/functions/notes")
   .then((res)=>res.json(console.log(res)))
+=======
+  fetch(`${API_URL}/notes`)
+  .then((res)=>res.json())
+>>>>>>> dev
   .then((data)=>setNotes(data.notes.reverse()))
-  .then(console.log(notes))
 }, []);
 
 // CREATE //
 
 function handleNewButtonClick () {
+<<<<<<< HEAD
   fetch('https://idealist-app.netlify.app/.netlify/functions/notes', {
+=======
+  fetch(`${API_URL}/notes`, {
+>>>>>>> dev
     method:"POST",
     headers:{
       "Content-Type":"application/json",
       "Accept":"application/json",
     },
     body:JSON.stringify({
+<<<<<<< HEAD
       // userId:1,
       // title:"New Note",
       // body:"Add note content",
       // tags:[]
       content: "hello"
+=======
+      userId:2,
+      title:"",
+      body: "",
+      tags:[],
+>>>>>>> dev
     })
   })
   .then(res=>res.json())
   .then(data=>{
-    let newNotes= [data, ...notes]; setNotes(newNotes);setDisplayedNote(data);
-    history.push(`/notes/${data.id}`);
+    let newNotes= [data.note, ...notes]; 
+    setNotes(newNotes);
+    setDisplayedNote(data.note);
+    history.push(`/edit/${data.note.id}`);
   })
+  
 }
 
 // UPDATE //
 
 function handleEditSubmit (editedNoteObj){
-  fetch(`https://json-server-heroku-hosting-2.herokuapp.com/notes/${editedNoteObj.id}`, {
+  fetch(`${API_URL}/notes/${editedNoteObj.id}`, {
     method:"PATCH",
     headers:{
       "Content-Type":"application/json",
@@ -105,19 +126,19 @@ function handleEditSubmit (editedNoteObj){
       }
     });
       setNotes(updatedNotes);
-      history.push(`/notes/${data.id}`)
     })
 };
 
 // DELETE //
 
 function onDeleteButtonClick (item) {
-  fetch(`https://json-server-heroku-hosting-2.herokuapp.com/notes/${item.id}`, {
+  fetch(`${API_URL}/notes?id=${item.id}`, {
     method:"DELETE",
   })
-  .then(res=>res.json())
-  .then(data=>history.push(`/`))
-  .then(()=>handleDeleteItem(item))
+  .then(()=>{
+    handleDeleteItem(item);
+    history.push(`/`);
+  })
 }
 
 //onEvent State Toggle Functions
@@ -173,14 +194,14 @@ function handleClearSearch () {
             <NoteGrid 
               notes={notes} 
               onDeleteButtonClick={onDeleteButtonClick} 
-              tagFilter={tagFilter} id={displayedNote.id} 
+              tagFilter={tagFilter} 
               handleNewButtonClick={handleNewButtonClick} 
             />: 
             <h1>Loading...</h1>}
         </Route>
         <Route path="/edit/:id">
           <NoteEditor 
-            note={editNote} 
+            API_URL={API_URL}
             handleEditSubmit={handleEditSubmit} 
             toggleEditNote={toggleEditNote} 
           />

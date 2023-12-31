@@ -11,7 +11,7 @@ function NoteItem({ note, onDeleteButtonClick }) {
   return (
     
       <div className="note-card">
-        <Link to={`/notes/${id}`} onClick={()=>console.log(note)} className="icon-link">
+        <Link to={`/notes/${id}`} className="icon-link">
         <div>
       <h2>{title}</h2>
       <p>{caption}</p>
