@@ -118,9 +118,10 @@ function onDeleteButtonClick (item) {
   fetch(`${API_URL}/notes?id=${item.id}`, {
     method:"DELETE",
   })
-  .then(res=>res.json())
-  .then(data=>history.push(`/`))
-  .then(()=>handleDeleteItem(item))
+  .then(()=>{
+    handleDeleteItem(item);
+    history.push(`/`);
+  })
 }
 
 //onEvent State Toggle Functions

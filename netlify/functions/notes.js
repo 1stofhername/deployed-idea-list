@@ -87,7 +87,12 @@ exports.handler = async function (event) {
     }
 
     if(event.httpMethod === "DELETE"){
-      let queryParams = event.queryStringParameters;
+      let queryParam = event.queryStringParameters;
+      let updatedNotes = notes.filter((note)=>{ return note.id != queryParam.id});
+      writeData(updatedNotes);
+      return {
+        statusCode: 204
+      }      
     }
   } catch (error) {
     console.error('Error creating note:', error);
@@ -133,7 +138,7 @@ function checkDisallowedWords(data) {
     const indexToUpdate = notes.findIndex(note => note.id === updatedNote.id );
     
 
-    if (indexToUpdate) {
+    if (indexToUpdate !== -1) {
       notes[indexToUpdate] = updatedNote;
     }
   }

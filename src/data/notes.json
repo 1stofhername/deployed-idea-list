@@ -1,16 +1,5 @@
 [
   {
-    "id": 2,
-    "userId": 1,
-    "title": "Perspiciatis a quidem dolorum.",
-    "body": "Ea ratione laboriosam minima recusandae minus qui ut provident. Ut est non eum eos eveniet. Ipsum sint aut aut dolores et. Fugiat a necessitatibus repellendus.\n \rNihil architecto quis laborum saepe repudiandae ab expedita. Itaque nemo perspiciatis sed asperiores. Quisquam assumenda nulla inventore enim ipsa.\n \rConsequatur quis odio repellendus beatae quidem voluptatem. Molestias pariatur non est architecto consequatur. Earum veniam voluptatem. Voluptatem aut voluptatem ex consequatur qui repellat et perferendis magnam.",
-    "tags": [
-      "ideas",
-      "clues",
-      "thoughts"
-    ]
-  },
-  {
     "id": 4,
     "userId": 1,
     "title": "Mollitia dicta",
@@ -108,25 +97,5 @@
       "affirmations"
     ],
     "id": 15
-  },
-  {
-    "id": 1703753371648,
-    "userId": 2,
-    "title": "yoyo",
-    "body": "yo whowho",
-    "tags": [
-      "yo",
-      "who"
-    ]
-  },
-  {
-    "id": 1703912954905,
-    "userId": 2,
-    "title": "title 2",
-    "body": "dyxfkgchvlguiytyfulgihj\n\nhjnhjvmvghbn xikn, ",
-    "tags": [
-      "yo",
-      "boy"
-    ]
   }
 ]
