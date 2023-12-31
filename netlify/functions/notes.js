@@ -6,7 +6,7 @@ let disallowedWords = require('../../src/data/flagged_words.js');
 
 exports.handler = async function (event) {
   try {
-    const dataPath = `${process.cwd()}/src/data/notes.json`;
+    const dataPath = `../../src/data/notes.json`;
     
     // Function to read data
     const readData = () => {
