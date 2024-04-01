@@ -58,7 +58,7 @@ function NoteContainer () {
   .then((res)=>res.json(console.log(res)))
   .then((data)=>setNotes(data.notes.reverse()))
   .then(console.log(notes))
-}, []);
+}, [notes]);
 
 // CREATE //
 
